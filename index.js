@@ -11,3 +11,4 @@ var bestResult = _(_.range(1, paint.length/2).map(function(size) {
   return commands.length;
 })
 io.write("learn_and_teach.out.txt", bestResult);
+//TEST io.write("learn_and_teach.out.txt", reduce(cut(io.read("learn_and_teach.in.txt"), 1).map(diviner)));
