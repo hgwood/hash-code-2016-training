@@ -28,7 +28,8 @@ describe('Testing io', function() {
   it('should write the file', function () {
     reader.write('foo.txt', [{command: 'foo', args: [1, 2]}, {command: 'bar', args: [3, 4]}]);
     var content = fs.readFileSync('foo.txt', 'utf8');
-    assert.equal(content, 'foo 1 2\nbar 3 4');
+    console.log(content);
+    assert.equal(content, '2\nfoo 1 2\nbar 3 4');
     fs.unlinkSync('foo.txt');
   });
 });
