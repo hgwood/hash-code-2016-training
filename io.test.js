@@ -1,4 +1,5 @@
 var assert = require('assert');
+var fs = require('fs');
 var reader = require('./io.js');
 describe('Testing io', function() {
   it('should convert the string to boolean array', function () {
@@ -22,5 +23,12 @@ describe('Testing io', function() {
     assert.equal(array[0][8], true);
     assert.equal(array[0][9], true);
     assert.equal(array.length, 5);
+  });
+
+  it('should write the file', function () {
+    reader.write('foo.txt', [{command: 'foo', args: [1, 2]}, {command: 'bar', args: [3, 4]}]);
+    var content = fs.readFileSync('foo.txt', 'utf8');
+    assert.equal(content, 'foo 1 2\nbar 3 4');
+    fs.unlinkSync('foo.txt');
   });
 });

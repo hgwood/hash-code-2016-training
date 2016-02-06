@@ -28,10 +28,14 @@ function string2BooleanArray (value) {
   });
 }
 
-function write (commands) {
+function write (path, commands) {
   if (!commands || !Array.isArray(commands)) {
     throw new Error('commands array must be defined');
   }
 
+  var stringCommands = _.map(commands, function (command) {
+    return command.command + ' ' + _.join(command.args, ' ');
+  });
 
+  fs.writeFileSync(path, _.join(stringCommands, '\n'));
 }
