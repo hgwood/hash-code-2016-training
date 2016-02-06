@@ -1,9 +1,9 @@
 const _ = require("lodash")
 
-module.exports = function black(painting) {
+module.exports = function blacklines(painting) {
   const commands = []
   var startingZone = false;
-  _.each(painting, (line, x) => {
+  _.each(painting.zone, (line, x) => {
   	_.each(line, (spot, y) => {
   		if(!_.isNumber(startingZone) && spot) startingZone = y
   		if(!spot && _.isNumber(startingZone)) {
@@ -16,5 +16,5 @@ module.exports = function black(painting) {
   	})
   	startingZone = false;
   })
-  return commands
+  return {commands, x: painting.x, y: painting.y};
 }
