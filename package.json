@@ -1,0 +1,22 @@
+{
+  "name": "hash-code-2016-training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hgwood/hash-code-2016-training.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hgwood/hash-code-2016-training/issues"
+  },
+  "homepage": "https://github.com/hgwood/hash-code-2016-training#readme",
+  "dependencies": {
+    "lodash": "^4.2.1"
+  }
+}
