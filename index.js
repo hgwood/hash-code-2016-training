@@ -1,4 +1,4 @@
 const io = require("./io")
-const black = require("./black")
+const diviner = require("./diviner")
 
-io.write("logo.out.txt", black(io.read("logo.in.txt")))
+io.write("learn_and_teach.out.txt", diviner(io.read("learn_and_teach.in.txt")))
