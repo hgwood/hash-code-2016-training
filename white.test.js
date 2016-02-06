@@ -1,6 +1,6 @@
 const assert = require("assert")
 
-describe("black algo", function () {
+describe("white algo", function () {
   const white = require("./white")
 
   it("", function () {
@@ -8,7 +8,6 @@ describe("black algo", function () {
       [false, true, false],
       [true, true, false]
     ])
-    console.log(result);
     assert.deepEqual(result, [
       {command: "PAINT_LINE", args: [0, 0, 0, 2]},
       {command: "PAINT_LINE", args: [1, 0, 1, 2]},
