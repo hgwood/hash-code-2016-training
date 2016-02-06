@@ -5,6 +5,6 @@ const white = require("./white.js");
 module.exports = function(painting) {
   var whiteRes = white(painting);
   var blackRes = black(painting);
-  if(whiteRes.length > blackRes.length) return blackRes;
+  if(whiteRes.commands.length > blackRes.commands.length) return blackRes;
   return whiteRes;
 };
