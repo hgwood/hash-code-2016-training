@@ -33,9 +33,11 @@ function write (path, commands) {
     throw new Error('commands array must be defined');
   }
 
-  var stringCommands = _.map(commands, function (command) {
+  var lines = _.map(commands, function (command) {
     return command.command + ' ' + _.join(command.args, ' ');
   });
 
-  fs.writeFileSync(path, _.join(stringCommands, '\n'));
+  lines.unshift(commands.length);
+
+  fs.writeFileSync(path, _.join(lines, '\n'));
 }
